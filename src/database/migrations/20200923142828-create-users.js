@@ -18,7 +18,7 @@ module.exports = {
         unique: true,
         allowNull: false,
       },
-      genre: {
+      gender: {
         type: Sequelize.STRING,
         allowNull: false,
       },
