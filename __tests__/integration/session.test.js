@@ -8,7 +8,7 @@ describe("Register", () => {
     const response = await request(app).post("/createUser").send({
       nome: "Paloma Arize",
       email: "paloma@paloma.com.br",
-      genero: "feminino",
+      genre: "F",
     });
 
     expect(response.status).toBe(201);
