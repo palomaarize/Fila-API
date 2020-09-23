@@ -18,7 +18,6 @@ module.exports = {
     process.env.NODE_ENV === "test"
       ? "./__tests__/database.sqlite"
       : "./src/database/database.sqlite",
-  operatorsAliases: false,
   logging: false,
   define: {
     timestamps: true,
