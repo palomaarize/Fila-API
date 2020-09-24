@@ -8,13 +8,25 @@ describe("Register", () => {
     await truncate();
   });
 
+  
+
   it("should register a new user", async () => {
     const response = await request(app).post("/createUser").send({
-      nome: "Paloma Arize",
-      email: "paloma@ufba.br",
+      name: "Paloma Arize",
+      email: "palomaarize@ufba.br",
       gender: "F",
     });
 
     expect(response.status).toBe(201);
   });
+
+  // it("must not register user", async () => {
+  //   const response = await request(app).post("/createUser").send({
+  //     name: "Paulo Arize",
+  //     email: "palomaarize@ufba.br",
+  //     gender: "M",
+  //   });
+
+  //   expect(response.status).toBe(404);
+  // });
 });
