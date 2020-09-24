@@ -1,4 +1,6 @@
 const { User } = require("../models");
+const express = require('express');
+const router = express.Router();
 
 class CreateUserController {
   async store(req, res) {
