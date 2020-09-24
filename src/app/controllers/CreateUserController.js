@@ -5,7 +5,7 @@ class CreateUserController {
     const { name, email, gender } = req.body;
     const user = await User.findOne({ where: { email } });
     if (user) {
-      return res.status(404).send({ msg: "User already registered" });
+      return res.status(401).send({ msg: "User already registered" });
     }
     const newUser = await User.create({ name, email, gender });
     return res.status(201).send({ msg: "User registered", newUser });
