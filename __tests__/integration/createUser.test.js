@@ -1,6 +1,6 @@
 const request = require("supertest");
 const app = require("../../src/app");
-const truncate = require("../../src/utils/truncate");
+const truncate = require("../utils/truncate");
 const { User } = require("../../src/app/models");
 
 // describe("Mini teste", () => {
