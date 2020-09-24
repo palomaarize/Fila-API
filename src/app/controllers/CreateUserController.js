@@ -2,19 +2,15 @@ const { User } = require("../models");
 
 class CreateUserController {
   async store(req, res) {
-    const { name, email, genre } = req.body;
-
+    const { name, email, gender } = req.body;
     const user = await User.findOne({ where: { email } });
-
-    if (!user) {
-      return res.status(201).json({ message: "Valid for registration!" });
-    } else {
-      return res
-        .status(401)
-        .json({ message: "This email is already registered!" });
+    if (user) {
+      return res.status(404).send({ msg: "User already registered" });
     }
+    const newUser = await User.create({ name, email, gender });
+    return res.status(201).send({ msg: "User registered", newUser });
 
-    return res.jason ({ user });
+    return res.json({ user });
   }
 }
 
