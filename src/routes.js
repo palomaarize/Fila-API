@@ -10,6 +10,6 @@ routes.get("/showLine", UserController.showLineInOrder);
 routes.get("/filterLines/gender/:gender", UserController.queueParameterGender);
 routes.get("/filterLines/name/:name", UserController.queueParameterName);
 routes.get("/filterLines/email/:email", UserController.queueParameterEmail);
-routes.put("/popLine", UserController.queueDelete);
+//routes.put("/popLine", UserController.queueDelete);
 
 module.exports = routes;
