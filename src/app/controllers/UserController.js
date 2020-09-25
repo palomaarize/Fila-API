@@ -49,7 +49,7 @@ class UserController {
       return res
         .status(200)
         .json(
-          userEmail.name + " sua posição na fila é: " + userEmail.line_position
+          userEmail.name + ", sua posição na fila é: " + userEmail.line_position
         );
     } catch (error) {
       return res.status(500).json(error.message);
@@ -119,10 +119,10 @@ class UserController {
 
   async queueDelete(req, res) {
     try {
+      const { id } = req.params;
       const firstUSer = await User.findOne({
         order: [["line_position", "ASC"]],
       });
-      const { line_position } = firstUSer;
 
       let newValue =
         Number(firstUSer.line_position) - Number(firstUSer.line_position);
@@ -130,13 +130,12 @@ class UserController {
 
       await User.update(
         { line_position: newValue },
-        { where: { line_position: Number(line_position) } }
+        { where: { id: firstUSer.id } }
       );
       return res.status(200).json(newValue);
     } catch (error) {
-
+      return res.status(500).json(error.message);
     }
-
   }
 }
 module.exports = new UserController();
