@@ -12,6 +12,7 @@ module.exports = {
 
       line_position: {
         type: Sequelize.INTEGER,
+        defaultValue: 0
       },
 
       name: {
