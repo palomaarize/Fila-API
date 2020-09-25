@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     gender: DataTypes.STRING,
+    line_position: DataTypes.INTEGER,
   });
 
   return User;

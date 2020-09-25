@@ -10,8 +10,8 @@ module.exports = {
         allowNull: false,
       },
 
-      linePositionAtt: {
-        type: Sequelize.INTEGER,     
+      line_position: {
+        type: Sequelize.INTEGER,
       },
 
       name: {
