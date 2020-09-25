@@ -32,18 +32,5 @@ describe("Register", () => {
     });
     expect(secondResponse.status).toBe(401);
   });
-  // it("should add an user to line", async () => {
-  //   const response = await request(app).post("/createUser").send({
-  //     name: "Paulo Arize",
-  //     email: "palomaarize@ufba.br",
-  //     gender: "M",
-  //   });
-  //   expect(response.status).toBe(201);
-  //   const userID = response.body.id;
-  //   const secondResponse = await request(app).post("/addToLine/" + userID).send({
-  //   });
-  //   expect(response.status).toBe(200);
-  // });
-
 });
 

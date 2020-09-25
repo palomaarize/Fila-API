@@ -9,6 +9,11 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
+
+      linePositionAtt: {
+        type: Sequelize.INTEGER,     
+      },
+
       name: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -22,10 +27,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      linePosition: {
-        type: Sequelize.INTEGER,
-        default: 0,
-      },
+
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
