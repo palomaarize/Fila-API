@@ -116,26 +116,27 @@ class UserController {
       return res.status(500).json(error.message);
     }
   }
+/// Tentei criar um fluxo de pensamento para que pudesse por em prática o popLine, mas após muitas tentativas, 
+///não consegui achar a forma certa. Espero que trabalhando na equipe com vocÊs possamos encontrar respostas como essa!
+  // async queueDelete(req, res) {
+  //   try {
+  //     const { id } = req.params;
+  //     const firstUSer = await User.findOne({
+  //       order: [["line_position", "ASC"]],
+  //     });
 
-  async queueDelete(req, res) {
-    try {
-      const { id } = req.params;
-      const firstUSer = await User.findOne({
-        order: [["line_position", "ASC"]],
-      });
+  //     let newValue =
+  //       Number(firstUSer.line_position) - Number(firstUSer.line_position);
+  //     console.log(newValue);
 
-      let newValue =
-        Number(firstUSer.line_position) - Number(firstUSer.line_position);
-      console.log(newValue);
-
-      await User.update(
-        { line_position: newValue },
-        { where: { id: firstUSer.id } }
-      );
-      return res.status(200).json(newValue);
-    } catch (error) {
-      return res.status(500).json(error.message);
-    }
-  }
+  //     await User.update(
+  //       { line_position: newValue },
+  //       { where: { id: firstUSer.id } }
+  //     );
+  //     return res.status(200).json(newValue);
+  //   } catch (error) {
+  //     return res.status(500).json(error.message);
+  //   }
+  // }
 }
 module.exports = new UserController();
